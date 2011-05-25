@@ -1,4 +1,10 @@
 <?php
+/*
+* Redisent PHP Session Handler
+* Copyright AF83 (2011) Contributions by PC, BSD LICENSE
+* @usage: in init script
+* redis_session_init($server = 'localhost', $port = 6379, $prefix = "session:php:" ) ;
+*/
 require_once 'redisent.php';
 
 $redisServer = null; //Redis Instance
@@ -23,7 +29,7 @@ function redis_session_init($server = 'localhost', $port = 6379, $prefix = "sess
                            'redis_session_destroy',
                            'redis_session_gc');
 
- register_shutdown_function('session_write_close');
+ register_shutdown_function('session_write_close'); //Work around for session write never being called
 }
 
 
