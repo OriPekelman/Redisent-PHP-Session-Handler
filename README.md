@@ -1,3 +1,5 @@
+# [NOT MAINTAINED]
+
 # Redisent PHP Session Handler
 Copyright AF83 (2011) Contributions by PC
 
